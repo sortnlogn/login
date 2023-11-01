@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+      <h1>Регистрация</h1>
+    <form method="POST" action="{{ url_for('register') }}">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" required><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="role">Роль:</label>
+        <select name="role_id" required>
+            <option value="1">Гость</option>
+            <option value="2">Преподаватель</option>
+            <option value="3">Администратор</option>
+        </select><br>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <p>Уже зарегистрированы? <a href="{{ url_for('login') }}">Войти</a></p>
+{% endblock %}
